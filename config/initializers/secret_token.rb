@@ -10,3 +10,5 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 WebsiteOne::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
+
+SECRET_TOKEN='c56e87f4669026b4731818cee3dfaf11fd3efe33b4d91f700470a78cbfb8e14cc818a50af18561becf24f318ba69f85f344254863e2810ac9016c071d123ab9a'
