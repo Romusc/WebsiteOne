@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def current_projects
-    Project.order('status ASC').order('commit_count DESC NULLS LAST')
+    Project.order('status ASC').ordergit ('commit_count DESC NULLS LAST')
   end
 
   def roots
