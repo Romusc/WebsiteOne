@@ -97,7 +97,7 @@ Feature: Show Events
   Scenario: Render Next Scrum info on landing page
     Given the date is "2014/02/01 09:15:00 UTC"
     And I am on the home page
-    Then I should see "Want to learn more? Listen in. Next projects review meeting"
+    Then I should see "Want to learn more? Listen in. Next projects' review meeting"
     And the next event should be in:
       | period | interval |
       | 1      | day      |
@@ -138,3 +138,13 @@ Feature: Show Events
     And I am on Events index page
     And I click on the event body for the event named "Scrum"
     Then I should be on the event "show" page for "Scrum"
+
+  @javascript
+  Scenario: I add an event to my Google Calendar
+    Given the date is "2014/02/01 09:15:00 UTC"
+    And I am on Events index page
+    And I click "Scrum"
+    Then the export to google calendar link should not be visible
+    When I click the calendar icon
+    And I click "Export to Google Cal"
+    Then I should see "Sign in to continue to Google Calendar"
